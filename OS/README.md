@@ -74,3 +74,26 @@
  - Message passing: 일반적으로 많이 씀.
     - 특정 공간에 데이터를 쓴 다음 알람을 줘서 데이터가 필요한 	애들이 가져가는 방식 (보통은 계속 데이터를 기다리고 있다.)
     - 프로세스가 여러개 물렸을 때는 장점이다.
+
+## Pipe
+
+- pipe: 프로세스가 통신할 수 있는 통로 역할
+- Ordinary pipes: 프로세스 생성할 때, 미리 꽂아 놓는 형식
+- Producer - Consumer 구성에서 빈번하게 사용, unidirectional이다
+
+- Ordinary pipe의 한계점: 부모자식관계가 아니면 쓸 수가 없다
+
+## Thread
+- 하나의 프로세스는 하나 이상의 Thread를 갖는다
+- 프로세스를 복사하면 code, data, register등 다 복사된다.
+- 하나의 프로그램에 다수의 Thread는 code 공간을 공유한다. 따라서 하나의 Thread에서 문제가 발생하면 OS가 code 공간에 할당된 resource를 회수하게 되므로  모든 Thread들이 멈추게 된다.
+- 응답 속도가 빠르다. Process보다 Context Switching이 빠르다.
+
+## Amdahl's law
+- 컴퓨터 시스템의 일부를 개선할 때 전체적으로 얼마만큼의 최대 성능 향상이 있는지 계산하는 데 사용된다.
+
+![image](https://user-images.githubusercontent.com/29851704/149663134-9b255939-070c-490f-aa40-10aa9a74a19b.png)
+- S는 직력 부분
+- N은 코어개수 
+
+![image](https://user-images.githubusercontent.com/29851704/149663057-3598e6f4-45af-4802-bc06-272ea909e3c1.png)
