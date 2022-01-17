@@ -7,7 +7,7 @@
 # Kotlin
  ### [코드랩](https://developer.android.com/courses/android-basics-kotlin/course?hl=ko)
  - Unit:2 Layouts
-    - [앱에서 사용자 입력받기](Kotlin/Codelabs/Layouts/Get_user_input_in_an_app_Part1.md)
+    - [앱에서 사용자 입력받기](Kotlin/Codelabs/Layouts/GetUserInputApp_Part1/Get_user_input_in_an_app_Part1.md)
  - Unit:3 Navigation
  - Unit:4 Connect to the internet
 
