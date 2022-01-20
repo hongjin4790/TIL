@@ -1,0 +1,7 @@
+#Thu Jan 20 20:21:37 KST 2022
+base.1=C\:\\Users\\kimhongjin\\Desktop\\TIL\\Kotlin\\Codelabs\\Layouts\\DisplayScrollableList\\Project_Doggler\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\classes.dex
+path.1=classes.dex
+base.0=C\:\\Users\\kimhongjin\\Desktop\\TIL\\Kotlin\\Codelabs\\Layouts\\DisplayScrollableList\\Project_Doggler\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex
