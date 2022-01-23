@@ -97,3 +97,52 @@
 - N은 코어개수 
 
 ![image](https://user-images.githubusercontent.com/29851704/149663057-3598e6f4-45af-4802-bc06-272ea909e3c1.png)
+
+## CPU Scheduling
+- 어떠한 cpu가 어떤 프로세스를 쓸지 결정하는 것
+- cpu를 최대한 노는기간 없게 프로세스들을 잘 관리
+- cpu burst: 실제 프로세스가 cpu를 사용하는 시간
+- I/O burst: waiting하는 기간
+
+- Nonpreemtive: 한번 프로세스가 cpu를 장학하면 그 프로세스가 cpu를 안 쓴다는 신호를 보내기 전까지 아무도 cpu를 뺏어오지 못한다. 뺏는 경우는 스스로 놓거나, 시간이 다 되었을경우뿐
+- Preemtive: 수행하는 중간에도 외부에서 강제로 ready queue로 보낼 수 있다.
+
+- Dispatcher: Context Switching 할 때, 프로세스의 정보를 저장했다가 다른 프로세스 상태를 읽는 동작을 해주는 것 Context Switching을 너무 자주하면 프로세스가 실행하는 시간보다 Dispatcher수행시간이 더 길어진다.
+
+- Throughput : 전체 프로세스가 끝나는데 걸리는 시간
+- CPU utilization : CPU가 얼마나 놀지 않고 있었냐
+- Turnaround time : 각각의 프로세스들이 시작하면서부터 끝날 때까지 걸리는 시간의 평균
+- Response time : 사람과 상호작용을 안 해도 되는 일은 그냥 빨리 끝내기만하면 된다. 하지만 사람과 상호작용을 통해 해야하는일은 위의 것이 중요한 게 아니라 빨리 respon를 주는 것이 더 중요하다.
+
+- waiting time : 각 프로세스마다 평균 waiting time들 지표로 삼겠다.
+### First-Come, First-Served(FCFS):
+
+![image](https://user-images.githubusercontent.com/29851704/150680762-088ff6d5-7a21-4b58-8ed6-9b528644bb15.png)
+
+- 먼저 들어온 것부터 수행한다.
+- Convoy effect: 하나의 프로세스가 앞에서 막아버리면 뒤에 프로세스가 사용 못한다
+
+### Shortest-Job-First(SJF)
+![image](https://user-images.githubusercontent.com/29851704/150680812-2ffa1970-65c5-4072-b4ff-cde9a27273e3.png)
+
+- 제일 빨리 끝날만 한(Burst time) 프로세스를 먼저 선택하는 것
+- 실제로는 Burst time을 알 수 있는 방법을 몰라서 못쓴다
+
+### Round Robin(RR)
+![image](https://user-images.githubusercontent.com/29851704/150680877-b0bc974d-b02b-4fb0-a328-6cb8c96b8918.png)
+
+- time slice와 Preemtive성질이 있다. (위 예제는 q=4 이다)
+- 하나의 프로세스는 한 번에 일정한 시간 이상을 수행할 수 없고 순서는 FCFS 이다.
+- q가 작으면 작을수록 좋아 보이지만 context switching이 자주발생해서 overhead가 더 발생한다.(Dispatch latency)
+
+### Priority Scheduling
+![image](https://user-images.githubusercontent.com/29851704/150680968-a2279247-47ef-4720-b3f9-e765f47df7cc.png)
+
+
+- 프로세스의 우선순위를 우선으로 한다.
+- Priority가 낮을수록 높은 것이다.
+
+### Starvation
+- Priority가 낮아서 계속 돌아가는 프로세스 뒤로 걸려서 영구적으로 못 돌아가는 현상
+- Priority를 아무리 낮게 놔두더라도 일정 시간마다 Priority를 계속 올려줘서 Starvation을 해결함
+
