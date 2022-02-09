@@ -43,7 +43,11 @@
    - 데이터 가져오기 및 표시하기
       - 인터넷에서 데이터 가져오기
       - 인터넷에서 이미지 로드 및 표시
-      
-
+- Unit:5 Data persistence
+   - SQL, Room, Flow 소개
+      - Room 및 Flow 소개
+   - 데이터 지속성을 위해 Room 사용
+      - Room으로 데이터 유지하기
+      - Room을 사용하여 데이터 읽기 및 업데이트하기
 
 
