@@ -146,3 +146,13 @@
 - Priority가 낮아서 계속 돌아가는 프로세스 뒤로 걸려서 영구적으로 못 돌아가는 현상
 - Priority를 아무리 낮게 놔두더라도 일정 시간마다 Priority를 계속 올려줘서 Starvation을 해결함
 
+### Race Condition
+- 같은 데이터를 동시에 접근할 때는 함부로 허용하면 안된다.
+- 해결방법은 동기화이다 -> 하나의 프로세스가 Shared Data를 조작하고 있을 때는 다른 것을 쓰면 안된다.
+
+### Critical Section
+- Shared Data를 조작하는 영역을 Critical Section이라고 부른다.
+- Critical Section을 해결하기 위해서는 3가지 조건이 있다.
+    - Mutual exclusion: 하나의 프로세스가 쓸때는 다른 프로세스는 사용 x
+    - Progress : CS가 비어있는데 들어가고 싶은 프로세스가 있으면 반드시 그 중에 하나는 CS에 입장을 해야한다.
+    - Bounded waiting : CS에 들어가려고 문을 두드리면 반드시 일정한 시간, 일정한 순서안에 여기에 입장한다. (우선순위를 빼앗겨서 Starvation문제가 발생하는 것을 막는다.)
