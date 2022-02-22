@@ -1,9 +1,13 @@
 package com.example.firebasestudy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.firebasestudy.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -18,24 +22,53 @@ class MainActivity : AppCompatActivity() {
         private const val TAG = "KotlinActivity"
     }
     private lateinit var database: DatabaseReference
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        database = Firebase.database.reference
+        auth = Firebase.auth
 
-        writeNewUser("qwe9","hong","94@")
-        writeNewPost("asd","d","a","353")
+//        database = Firebase.database.reference
 
+//        writeNewUser("qwe9","hong","94@")
+//        writeNewPost("asd","d","a","353")
 
-        database.child("users").child("qwe9").get().addOnSuccessListener {
-            Log.i("firebase11", "Got value ${it.value}")
-        }.addOnFailureListener{
-            Log.e("firebase11", "Error getting data", it)
+//        database.child("users").child("qwe9").get().addOnSuccessListener {
+//            Log.i("firebase11", "Got value ${it.value}")
+//        }.addOnFailureListener{
+//            Log.e("firebase11", "Error getting data", it)
+//        }
+
+        binding.apply {
+            loginBtn.setOnClickListener {
+                if(loginId.text.toString().isNotEmpty() && loginPw.text.toString().isNotEmpty()){
+                    signIn(loginId.text.toString(),loginPw.text.toString())
+                }
+            }
+            signUpBtn.setOnClickListener {
+                val intent = Intent(this@MainActivity, SignUpActivity::class.java)
+                startActivity(intent)
+            }
+
         }
+    }
 
+    private fun signIn(email: String, password:String){
+        auth.signInWithEmailAndPassword(email,password)
+            .addOnCompleteListener(this){task->
+                if(task.isSuccessful){
+                    Log.d("SignIn", "signInWithEmail:success")
+                    val intent = Intent(this@MainActivity, NewsActivity::class.java)
+                    startActivity(intent)
+                }else{
+                    Log.w("SignIn", "createUserWithEmail:failure", task.exception)
+                    Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     private fun writeNewUser(userId: String, name: String, email:String){
