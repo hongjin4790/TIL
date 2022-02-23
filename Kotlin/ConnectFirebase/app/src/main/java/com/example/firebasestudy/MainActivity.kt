@@ -31,17 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
-//        database = Firebase.database.reference
-
-//        writeNewUser("qwe9","hong","94@")
-//        writeNewPost("asd","d","a","353")
-
-//        database.child("users").child("qwe9").get().addOnSuccessListener {
-//            Log.i("firebase11", "Got value ${it.value}")
-//        }.addOnFailureListener{
-//            Log.e("firebase11", "Error getting data", it)
-//        }
-
         binding.apply {
             loginBtn.setOnClickListener {
                 if(loginId.text.toString().isNotEmpty() && loginPw.text.toString().isNotEmpty()){

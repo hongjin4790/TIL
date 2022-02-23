@@ -70,11 +70,11 @@
                     android:id="@+id/dog_hobbies"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
                     android:padding="8dp"
                     android:textAppearance="?attr/textAppearanceBody1"
-                    android:layout_alignParentEnd="true"
-                    tools:text="Hobbies: Barking"
-                    tools:ignore="RelativeOverlap" />
+                    tools:ignore="RelativeOverlap"
+                    tools:text="Hobbies: Barking" />
 
             </RelativeLayout>
 

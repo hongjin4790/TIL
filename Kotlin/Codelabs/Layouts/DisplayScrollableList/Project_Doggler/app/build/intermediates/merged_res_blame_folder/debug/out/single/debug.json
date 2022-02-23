@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\kimhongjin\\Desktop\\TIL\\Kotlin\\Codelabs\\Layouts\\DisplayScrollableList\\Project_Doggler\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_grid_list.xml.flat",
-        "source": "C:\\Users\\kimhongjin\\Desktop\\TIL\\Kotlin\\Codelabs\\Layouts\\DisplayScrollableList\\Project_Doggler\\app\\src\\main\\res\\layout\\activity_grid_list.xml"
-    },
-    {
         "merged": "C:\\Users\\kimhongjin\\Desktop\\TIL\\Kotlin\\Codelabs\\Layouts\\DisplayScrollableList\\Project_Doggler\\app\\build\\intermediates\\res\\merged\\debug\\layout_grid_list_item.xml.flat",
         "source": "C:\\Users\\kimhongjin\\Desktop\\TIL\\Kotlin\\Codelabs\\Layouts\\DisplayScrollableList\\Project_Doggler\\app\\src\\main\\res\\layout\\grid_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\kimhongjin\\Desktop\\TIL\\Kotlin\\Codelabs\\Layouts\\DisplayScrollableList\\Project_Doggler\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_grid_list.xml.flat",
+        "source": "C:\\Users\\kimhongjin\\Desktop\\TIL\\Kotlin\\Codelabs\\Layouts\\DisplayScrollableList\\Project_Doggler\\app\\src\\main\\res\\layout\\activity_grid_list.xml"
     },
     {
         "merged": "C:\\Users\\kimhongjin\\Desktop\\TIL\\Kotlin\\Codelabs\\Layouts\\DisplayScrollableList\\Project_Doggler\\app\\build\\intermediates\\res\\merged\\debug\\drawable_nox.jpg.flat",
